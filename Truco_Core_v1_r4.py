@@ -267,7 +267,7 @@ def train_agents(unN, DEBUG, p1=None, p2=None):
 
     for i in range(N):
         if DEBUG: printDebug("EPISODIO #" + str(i + 1) +"   ")
-        print("nada\r" + str(((i+1)/N)*100)[0:5] + " % Training completado ", end="")
+        print("\r" + str(((i+1)/N)*100)[0:5] + " % Training completado ", end="")
         #SETUP INICIAL repartir cartas
         cartas_p1, cartas_p2 = Reglas.RepartirCartas()
         p1.TomarCartas(cartas_p1)
@@ -675,7 +675,7 @@ class Agente:
         # Primero genero las manos posibles con 3 cartas
         for m in GetAllStatesCodes(Reglas.MAZO[:], 3):
             cont = cont+1
-            print("nada\r" + str((cont / total) * 100)[0:5] + " % inicializando Q de p" + str(self.jugador), end="")
+            print("\r" + str((cont / total) * 100)[0:5] + " % inicializando Q de p" + str(self.jugador), end="")
 
             #primero agrego los subvacios
             self.Q[int(str(m) + "0")] = {}
@@ -834,7 +834,7 @@ class AgenteRandom:
         # Primero genero las manos posibles con 3 cartas
         for m in GetAllStatesCodes(Reglas.MAZO[:], 3):
             cont = cont + 1
-            print("nada\r" + str((cont / total) * 100)[0:5] + " % inicializando Q de p" + str(self.jugador), end="")
+            print("\r" + str((cont / total) * 100)[0:5] + " % inicializando Q de p" + str(self.jugador), end="")
 
             # primero agrego los subvacios
             self.Q[int(str(m) + "0")] = {}
